@@ -2,23 +2,19 @@ package one.digitalinnovation;
 
 public class Pilha {
 
-    private No refNoEntradaPilha;
-
-    public Pilha() {
-        this.refNoEntradaPilha = null;
-    }
+    No refNoEntradaPilha = null;
 
     public void push(No novoNo){
-        No refAuxiliary = refNoEntradaPilha;
+        No refAuxiliar = refNoEntradaPilha;
         refNoEntradaPilha = novoNo;
-        refNoEntradaPilha.setRefNo(refAuxiliary);
+        refNoEntradaPilha.setRefNo(refAuxiliar);
     }
 
     public No pop(){
-        if(!this.isEmpty()){
-            No noPopped = refNoEntradaPilha;
+        if(!isEmpty()){
+            No noPoped = refNoEntradaPilha;
             refNoEntradaPilha = refNoEntradaPilha.getRefNo();
-            return noPopped;
+            return noPoped;
         }
         return null;
     }
@@ -28,31 +24,24 @@ public class Pilha {
     }
 
     public boolean isEmpty(){
-
- //       if(refNoEntrantPilha == null){
- //           return true;
- //       }
- //       return false;
-        return refNoEntradaPilha == null ? true : false;
+        return refNoEntradaPilha == null? true : false;
     }
 
     @Override
-    public String toString(){
-        String stringRetorno = "-------------\n";
-        stringRetorno += "     Pilha\n";
-        stringRetorno += "-------------\n";
-
+    public String toString() {
+        String stringRetorno = "------------\n";
+        stringRetorno += "   Pilha\n";
+        stringRetorno += "------------\n";
         No noAuxiliar = refNoEntradaPilha;
-
-        while (true){
+        while(true){
             if(noAuxiliar != null){
-                stringRetorno += "[No{dado=" + noAuxiliar.getDado() +"}]\n";
+                stringRetorno += "[No{dado=" + noAuxiliar.getDado() + "}]\n";
                 noAuxiliar = noAuxiliar.getRefNo();
             }else{
                 break;
             }
         }
-        stringRetorno += "=============\n";
+        stringRetorno += "============";
         return stringRetorno;
     }
 }

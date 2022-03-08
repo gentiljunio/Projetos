@@ -1,7 +1,6 @@
 package one.digitalinnovation;
 
 public class No {
-
     private int dado;
     private No refNo = null;
 
@@ -24,7 +23,7 @@ public class No {
         return refNo;
     }
 
-    public void setRefNo(No reNo) {
+    public void setRefNo(No refNo) {
         this.refNo = refNo;
     }
 
@@ -34,5 +33,4 @@ public class No {
                 "dado=" + dado +
                 '}';
     }
-
 }
